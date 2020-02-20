@@ -8,19 +8,16 @@
 
 import Foundation
 import RxSwift
-
+import RxCocoa
 
 class TextModel {
     
     static var sharedText = TextModel()
     
-    var title = Observable.just("Title tex")
-    var subscribe: Disposable
+    var title = BehaviorRelay(value: "teste")
     
+    var namesArray: BehaviorRelay<[String]> = BehaviorRelay(value: ["pedro", "pedrinho", "ben10"])
     private init() {
-        subscribe = title.subscribe { event in
-            print(event)
-        }
         
     }
     

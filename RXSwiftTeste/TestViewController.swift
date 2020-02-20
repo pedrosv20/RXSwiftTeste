@@ -7,15 +7,38 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 class TestViewController: UIViewController {
 
+    let tableView = UITableView()
+    
+    let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        view.addSubview(tableView)
+        
+        
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            tableView.topAnchor.constraint(equalTo: view.topAnchor, constant: 0.0),
+            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: 0.0),
+            tableView.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 0.0),
+            tableView.rightAnchor.constraint(equalTo: view.rightAnchor, constant: 0.0)
+        ])
+        
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        
+        TextModel.sharedText.namesArray.bind(to: tableView.rx.items(cellIdentifier: "cell")) { row, name, cell in
+            cell.textLabel?.text = "\(name)"
+        }.disposed(by: disposeBag)
     }
+    
+    
     
 
     /*
