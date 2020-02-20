@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		0753B8AD23FC7F3C00643711 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0753B8AC23FC7F3C00643711 /* TestViewController.swift */; };
 		0753B8AF23FC804000643711 /* TextModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0753B8AE23FC804000643711 /* TextModel.swift */; };
+		076FB28123FF1A8000878230 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076FB28023FF1A8000878230 /* Coordinator.swift */; };
 		0788512623FC647600995BB6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0788512523FC647600995BB6 /* AppDelegate.swift */; };
 		0788512823FC647600995BB6 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0788512723FC647600995BB6 /* SceneDelegate.swift */; };
 		0788512A23FC647600995BB6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0788512923FC647600995BB6 /* ViewController.swift */; };
@@ -21,6 +22,7 @@
 /* Begin PBXFileReference section */
 		0753B8AC23FC7F3C00643711 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		0753B8AE23FC804000643711 /* TextModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextModel.swift; sourceTree = "<group>"; };
+		076FB28023FF1A8000878230 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		0788512223FC647600995BB6 /* RXSwiftTeste.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RXSwiftTeste.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0788512523FC647600995BB6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0788512723FC647600995BB6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -84,6 +86,7 @@
 				0788512E23FC647800995BB6 /* Assets.xcassets */,
 				0788513023FC647800995BB6 /* LaunchScreen.storyboard */,
 				0788513323FC647800995BB6 /* Info.plist */,
+				076FB28023FF1A8000878230 /* Coordinator.swift */,
 			);
 			path = RXSwiftTeste;
 			sourceTree = "<group>";
@@ -222,6 +225,7 @@
 			files = (
 				0788512A23FC647600995BB6 /* ViewController.swift in Sources */,
 				0753B8AF23FC804000643711 /* TextModel.swift in Sources */,
+				076FB28123FF1A8000878230 /* Coordinator.swift in Sources */,
 				0788512623FC647600995BB6 /* AppDelegate.swift in Sources */,
 				0753B8AD23FC7F3C00643711 /* TestViewController.swift in Sources */,
 				0788512823FC647600995BB6 /* SceneDelegate.swift in Sources */,

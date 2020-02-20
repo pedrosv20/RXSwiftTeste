@@ -10,30 +10,37 @@ import UIKit
 import RxSwift
 import RxCocoa
 
-class ViewController: UIViewController {
+final class ViewController: UIViewController {
     
     @IBOutlet weak var labelText: UILabel!
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var button: UIButton!
     
-    var disposeBag = DisposeBag()
+    let disposeBag = DisposeBag()
     
+    // final class
+    // tudo let
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+//        Driver
         
-        var observable = textField.rx.text.asObservable()
+        textField.rx.text.asObservable()
             .subscribe(onNext: { text in
                 TextModel.sharedText.title.accept(text!)
-            
-        })
+        }).disposed(by: disposeBag)
         
+        textField.rx.text.asDriver(onErrorJustReturn: nil)
+            
         TextModel.sharedText.title.asObservable()
             .subscribe(onNext: { value in
                 self.labelText.text = value
 
-        })
+            }).disposed(by: disposeBag)
+        
+            //dispose bag segura o alocamento de memoria. quando é tirado tudo se desaloca
+        
         
         
         
