@@ -11,9 +11,49 @@ import Moya
 
 enum Names {
     
-    case name
+    case getUser(id: Int)
+    
+    
 }
 
 extension Names: TargetType {
+    var baseURL: URL { return URL(string: "https://jsonplaceholder.typicode.com")! }
+    var path: String {
+        switch self {
+        case .getUser(let id):
+            return "/todos/\(id)"
+            
+        }
+    }
+    var method: Moya.Method {
+        switch self {
+        case .getUser:
+            return .get
+        }
+    }
+    var task: Task {
+        switch self {
+            
+        case .getUser: // Always sends parameters in URL, regardless of which HTTP method is used
+            return .requestPlain
+            
+        }
+    }
+    var sampleData: Data {
+        return Data()
+    }
     
+    var headers: [String: String]? {
+        return ["Content-type": "application/json"]
+    }
+}
+// MARK: - Helpers
+private extension String {
+    var urlEscaped: String {
+        return addingPercentEncoding(withAllowedCharacters: .urlHostAllowed)!
+    }
+    
+    var utf8Encoded: Data {
+        return data(using: .utf8)!
+    }
 }

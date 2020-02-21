@@ -11,7 +11,6 @@
 		0735DDA22400610A00FEC2DF /* Names.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0735DDA12400610A00FEC2DF /* Names.swift */; };
 		0753B8AD23FC7F3C00643711 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0753B8AC23FC7F3C00643711 /* TestViewController.swift */; };
 		0753B8AF23FC804000643711 /* TextModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0753B8AE23FC804000643711 /* TextModel.swift */; };
-		076F6C6024005B1D000632DE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076F6C5F24005B1D000632DE /* SceneDelegate.swift */; };
 		076F6C6424005BAD000632DE /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076F6C6324005BAD000632DE /* MainCoordinator.swift */; };
 		076FB28123FF1A8000878230 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076FB28023FF1A8000878230 /* Coordinator.swift */; };
 		0788512623FC647600995BB6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0788512523FC647600995BB6 /* AppDelegate.swift */; };
@@ -27,7 +26,6 @@
 		0735DDA12400610A00FEC2DF /* Names.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Names.swift; sourceTree = "<group>"; };
 		0753B8AC23FC7F3C00643711 /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		0753B8AE23FC804000643711 /* TextModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextModel.swift; sourceTree = "<group>"; };
-		076F6C5F24005B1D000632DE /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SceneDelegate.swift; path = ../../../../.Trash/SceneDelegate.swift; sourceTree = "<group>"; };
 		076F6C6324005BAD000632DE /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		076FB28023FF1A8000878230 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		0788512223FC647600995BB6 /* RXSwiftTeste.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RXSwiftTeste.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -65,7 +63,6 @@
 		0753B8B023FC804D00643711 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				076F6C5F24005B1D000632DE /* SceneDelegate.swift */,
 				0753B8AE23FC804000643711 /* TextModel.swift */,
 			);
 			path = Model;
@@ -247,7 +244,6 @@
 				076FB28123FF1A8000878230 /* Coordinator.swift in Sources */,
 				0788512623FC647600995BB6 /* AppDelegate.swift in Sources */,
 				0753B8AD23FC7F3C00643711 /* TestViewController.swift in Sources */,
-				076F6C6024005B1D000632DE /* SceneDelegate.swift in Sources */,
 				0735DD9F24005CC600FEC2DF /* Storyboarded.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

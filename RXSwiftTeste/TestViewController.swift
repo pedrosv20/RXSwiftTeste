@@ -10,19 +10,27 @@ import UIKit
 import RxSwift
 import RxCocoa
 import Foundation
+import Moya
 
 
 class TestViewController: UIViewController, Storyboarded {
 
     let tableView = UITableView()
-    
     let disposeBag = DisposeBag()
-    
     weak var coordinator: MainCoordinator?
+    
+    let provider = MoyaProvider<Names>()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        provider.request(.getUser(id: 1)){response in
+            do {
+                try print(response)
+            } catch is Error {
+                print("deu ruim")
+            }
+        }
         // Do any additional setup after loading the view.
         view.addSubview(tableView)
         
