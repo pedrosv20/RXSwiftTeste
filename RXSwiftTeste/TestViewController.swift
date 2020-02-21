@@ -12,9 +12,15 @@ import RxCocoa
 import Foundation
 import Moya
 
+struct User: Decodable {
+    let userID: Int
+    let id: Int
+    let title: String
+    let completed: Bool
+}
 
 class TestViewController: UIViewController, Storyboarded {
-
+    
     let tableView = UITableView()
     let disposeBag = DisposeBag()
     weak var coordinator: MainCoordinator?
@@ -23,13 +29,27 @@ class TestViewController: UIViewController, Storyboarded {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        provider.request(.getUser(id: 1)){response in
-            do {
-                try print(response)
-            } catch is Error {
-                print("deu ruim")
+        
+        provider.request(.getUser(id: 2)){ result in
+            
+            switch result {
+            case let .success(result):
+                do {
+                    let filteredResponse = try result.filterSuccessfulStatusCodes()
+                    let json = try filteredResponse.mapJSON()
+                    print(json)
+                }
+                catch let error {
+                    print(error.localizedDescription)
+                }
+            case let .failure(error):
+                
+                
+                print(error.errorDescription)
             }
+            
+            
+            
         }
         // Do any additional setup after loading the view.
         view.addSubview(tableView)
@@ -54,15 +74,15 @@ class TestViewController: UIViewController, Storyboarded {
     
     
     
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
