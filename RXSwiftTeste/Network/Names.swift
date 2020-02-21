@@ -12,6 +12,7 @@ import Moya
 enum Names {
     
     case getUser(id: Int)
+    case getAllUsers
     
     
 }
@@ -22,19 +23,21 @@ extension Names: TargetType {
         switch self {
         case .getUser(let id):
             return "/todos/\(id)"
-            
+        case .getAllUsers:
+            return "/todos"
         }
     }
     var method: Moya.Method {
         switch self {
-        case .getUser:
+        case .getUser, .getAllUsers:
             return .get
+            
         }
     }
     var task: Task {
         switch self {
             
-        case .getUser: // Always sends parameters in URL, regardless of which HTTP method is used
+        case .getUser, .getAllUsers: // Always sends parameters in URL, regardless of which HTTP method is used
             return .requestPlain
             
         }

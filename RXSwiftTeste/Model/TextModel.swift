@@ -18,6 +18,7 @@ class TextModel {
     
     var namesArray: BehaviorRelay = BehaviorRelay(value: ["pedro", "pedrinho", "ben10"])
     
+    var userArray: [Users] = []
 //    let a = PublishSubject()
 //    let b = BehaviorSubject(value: 0)
     

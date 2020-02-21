@@ -12,12 +12,6 @@ import RxCocoa
 import Foundation
 import Moya
 
-struct User: Decodable {
-    let userID: Int
-    let id: Int
-    let title: String
-    let completed: Bool
-}
 
 class TestViewController: UIViewController, Storyboarded {
     
@@ -30,14 +24,17 @@ class TestViewController: UIViewController, Storyboarded {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        provider.request(.getUser(id: 2)){ result in
+        provider.request(.getAllUsers){ result in
             
             switch result {
             case let .success(result):
                 do {
                     let filteredResponse = try result.filterSuccessfulStatusCodes()
-                    let json = try filteredResponse.mapJSON()
+                    let json = try filteredResponse.map([Users].self)
                     print(json)
+                    TextModel.sharedText.userArray = json
+                    
+                    self.addUsersInTableView()
                 }
                 catch let error {
                     print(error.localizedDescription)
@@ -70,6 +67,14 @@ class TestViewController: UIViewController, Storyboarded {
         }.disposed(by: disposeBag)
     }
     
+    func addUsersInTableView() {
+        var array = TextModel.sharedText.namesArray.value
+        
+        for user in TextModel.sharedText.userArray {
+            array.append(user.title)
+        }
+        TextModel.sharedText.namesArray.accept(array)
+    }
     //teste
     
     
