@@ -9,12 +9,16 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import Foundation
 
-class TestViewController: UIViewController {
+
+class TestViewController: UIViewController, Storyboarded {
 
     let tableView = UITableView()
     
     let disposeBag = DisposeBag()
+    
+    weak var coordinator: MainCoordinator?
     
     override func viewDidLoad() {
         super.viewDidLoad()

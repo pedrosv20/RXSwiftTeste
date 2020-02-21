@@ -18,8 +18,8 @@ class TextModel {
     
     var namesArray: BehaviorRelay = BehaviorRelay(value: ["pedro", "pedrinho", "ben10"])
     
-    let a = PublishSubject()
-    let b = BehaviorSubject(value: 0)
+//    let a = PublishSubject()
+//    let b = BehaviorSubject(value: 0)
     
     private init() {
         
